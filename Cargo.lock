@@ -2313,16 +2313,18 @@ checksum = "925383efa346730478fb4838dbe9137d2a47675ad789c546d150a6e1dd4ab31c"
 
 [[package]]
 name = "prism-sys"
-version = "0.1.1"
-source = "git+https://github.com/trypsynth/prismer?rev=3aed6f8#3aed6f8c50a94a194cc2d8a8d8ea6a10357c665b"
+version = "0.1.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f7e136318c976deff0b2c9d8af4aade8c2dfe25d21fad2f252ef950d248af85a"
 dependencies = [
  "cmake",
 ]
 
 [[package]]
 name = "prismer"
-version = "0.1.1"
-source = "git+https://github.com/trypsynth/prismer?rev=3aed6f8#3aed6f8c50a94a194cc2d8a8d8ea6a10357c665b"
+version = "0.1.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "18fbd7961f7e4f541926acf10859a282f08648c495516ac0cc453a23da7fc164"
 dependencies = [
  "prism-sys",
 ]
