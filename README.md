@@ -28,7 +28,21 @@ Android and iOS builds compile, but the plugin currently uses an unavailable stu
 
 ## Installation
 
-The Rust crate and JavaScript package are not currently published to a registry. Clone and build the plugin beside your Tauri application:
+Install the JavaScript package from npm:
+
+```sh
+npm install tauri-plugin-prism-api
+```
+
+Add the Rust crate to your Tauri application:
+
+```sh
+cargo add tauri-plugin-prism --manifest-path src-tauri/Cargo.toml
+```
+
+## Building from source
+
+Clone and build the plugin from [GitHub](https://github.com/cartertemm/tauri-plugin-prism):
 
 ```sh
 git clone https://github.com/cartertemm/tauri-plugin-prism.git
@@ -37,13 +51,13 @@ npm ci
 npm run build
 ```
 
-From your application directory, install the JavaScript package from that checkout:
+From your application directory, install the JavaScript package from the checkout:
 
 ```sh
 npm install ../tauri-plugin-prism
 ```
 
-Add the Rust crate to `src-tauri/Cargo.toml`. This example assumes the application and plugin directories have the same parent:
+Add the Rust crate to `src-tauri/Cargo.toml`. This example assumes the application and plugin directories share the same parent:
 
 ```toml
 [dependencies]
@@ -166,13 +180,13 @@ When `Info.available` is `false`, `backend` is `null`, every feature is `false`,
 The default `static` feature builds and links Prism statically:
 
 ```toml
-tauri-plugin-prism = { path = "../../tauri-plugin-prism" }
+tauri-plugin-prism = "0.1"
 ```
 
 To link Prism as a shared library, disable the default features and enable `shared`:
 
 ```toml
-tauri-plugin-prism = { path = "../../tauri-plugin-prism", default-features = false, features = ["shared"] }
+tauri-plugin-prism = { version = "0.1", default-features = false, features = ["shared"] }
 ```
 
 With shared linking, the Prism library must be available to the operating system loader at runtime. Do not enable `static` and `shared` together.
