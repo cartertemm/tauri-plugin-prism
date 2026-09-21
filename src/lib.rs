@@ -4,9 +4,9 @@ compile_error!("enable either the static or the shared feature, not both");
 mod commands;
 mod types;
 
-#[cfg(desktop)]
+#[cfg(not(target_os = "android"))]
 mod worker;
-#[cfg(mobile)]
+#[cfg(target_os = "android")]
 #[path = "stub.rs"]
 mod worker;
 
